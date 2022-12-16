@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  console.log("Start");
+
+  function checkIfPizzaMaterialIsAvailable() {
+    console.log("Pizza Material searching is started");
+    return false;
+  }
+
+  function workStarted() {
+    console.log("Work is started");
+
+    const hasPizza = checkIfPizzaMaterialIsAvailable();
+
+    if (hasPizza) {
+      console.log("Pizza  is found");
+      prepareColdCoffee();
+      return;
+    }
+
+    const hasPavBhaji = checkIfPavBhajiMaterialIsAvailable();
+    if (hasPavBhaji) {
+      console.log("PavBhaji  is found");
+      prepareColdCoffee();
+      return;
+    }
+
+   
+  }
+
+  function checkIfPavBhajiMaterialIsAvailable() {
+    console.log("Pav Bhaji Material searching is started");
+    return true;
+  }
+
+  function prepareColdCoffee() {
+    console.log("Coffee Prep is started");
+    cleanTheRoom();
+    return true;
+  }
+
+  function cleanTheRoom() {
+    console.log("Room cleaning is started");
+    return true;
+  }
+
+  workStarted();
+</script>

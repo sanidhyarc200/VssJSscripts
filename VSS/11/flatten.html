@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /**
+     * create function
+     * create empty array 
+     * loop the array check if current item is array
+     * call function recersively and concat result
+     * push result to empty array
+     * 
+     **/
+    /**
+     * itrate loop on array
+     * if element is not array push it to new array
+     * if it was array itrate again and push result to new array
+     * we will get a flat array
+     **/
+
+//     let arr = [[1,2,[3,4],5,[6,7,8,9],6]];
+
+//     let myarray=[];
+//     function flatArray(arr){
+//     for(let i=0;i<arr.length;i++){
+//         if(Array.isArray(arr[i])){
+
+//             myarray.push(arr[i]);
+
+//             continue;
+//         }else{
+//             flatArray(arr[i]);
+
+//         }        
+//     }
+//     return myarray
+// }
+//     console.log(flatArray(arr));
+let arr = [
+  1,
+  2,
+  [3, 4, [3, 4, [3, 4], [3, 4]]],
+  5,
+  [6, 7, 8, [3, 4], 9],
+  6,
+  [3, 4, [3, 4, [3, 4, [3, 4]]]],
+];
+const newArr = [];
+const size = arr.length;
+
+function flattenArray(arr,index,size) {
+    if(index === size) {
+        return;
+    }
+
+    if(Array.isArray(arr[index])) {
+        flattenArray(arr[index],0,arr[index].length);
+    }else{
+        newArr.push(arr[index]);
+    }
+    flattenArray(arr,index+1,size);
+}
+
+flattenArray(arr,0,size);
+
+console.log(newArr);
+</script>

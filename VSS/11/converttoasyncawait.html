@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    function restaurantCustomer() {
+    return getCustomer()
+    .then(customer => {
+        return getOrder(customer);
+    }).then(order => {
+        return prepareFood(order);
+    }).then(meal => {
+        return serveFood(meal);
+    }).then(food => {
+        return eatFood(food, customer);
+    }).catch(showError); 
+
+    }
+const restaurantCustomer = async() =>{
+    try{
+        const customer = await getCustomer();
+    const order = await getOrder(customer);
+    const meal = await prepareFood(order); 
+    const food = await serveFood(meal);
+    const result = await eatFood(food, customer);
+    
+    return result();
+
+    }
+    catch(err){
+        return null();
+    }
+}
+ restaurantCustomer();
+  
+
+
+// quest 2 
+
+function ex4() {
+    return fetch('https://microsoft.com').then(res).then(res2);
+}
+function res(result){
+    return result.ok;
+}
+
+function res2(result){
+   console.log(result);
+}
+
+    
+async function myfunction(){
+    try{
+        const abc = await fetch('https://microsoft.com')
+    const res = await res(abc)
+    
+    return res2(res)
+    }
+    catch(err){
+        return null();
+    }
+}
+</script>

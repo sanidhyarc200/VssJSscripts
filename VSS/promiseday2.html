@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+//     const promise = new Promise(res => res(2));
+// promise.then(v => {
+//         console.log(v);
+//         return v * 2;
+//     })
+//     .then(v => {
+//         console.log(v);
+//         return v * 2;
+//     })
+//     .then(v => {
+//         console.log(v);
+//     });
+
+
+
+// const promise = new Promise((res) => res(2));
+// promise
+//   .then((v) => {
+//     console.log(v);
+//     return v * 2;
+//   })
+//   .then((v) => {
+//     console.log(v);
+//     return d * 2;
+//   })
+//   .catch((err) => {
+//     console.log(err);
+
+//   })
+//   .then((v) => {
+//     console.log(v);
+//   });
+// console.log('start');
+
+
+
+
+
+
+// const promise1 = new Promise((resolve, reject) => {
+//   console.log(1)
+//   resolve(2)
+//   console.log(3)
+// })
+
+// promise1.then(res => {
+//   console.log(res)
+// })
+
+// console.log('end');
+// console.log('start');
+
+
+
+
+
+
+// const promise1 = new Promise((resolve, reject) => {
+//   console.log(1)
+// })
+
+// promise1.then(res => {
+//   console.log(2)
+// })
+
+// console.log('end');;
+// console.log('start')
+
+
+
+
+
+
+// const fn = () => (new Promise((resolve, reject) => {
+//   console.log(1);
+//   resolve('success')
+// }))
+
+// console.log('middle')
+
+// fn().then(res => {
+//   console.log(res)
+// })
+
+// console.log('end')
+// console.log('start')
+
+// Promise.resolve(1).then((res) => {
+//   console.log(res)
+// })
+
+// Promise.resolve(2).then((res) => {
+//   console.log(res)
+// })
+
+// console.log('end')
+
+
+
+
+
+
+console.log("start");
+
+setTimeout(() => {
+  console.log("STC 0");
+}, 0);
+
+setTimeout(() => {
+  console.log("STC 10");
+}, 10);
+
+const fn = () =>
+  new Promise((resolve, reject) => {
+    console.log(1);
+
+    setTimeout(() => {
+      resolve("success");
+    }, 4000);
+  });
+
+console.log("middle");
+
+fn().then((res) => {
+  console.log(res);
+});
+
+console.log("end");
+
+</script>

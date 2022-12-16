@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function upperCaseFirsstLetter(){
+   var string ="India is my country";
+   var words = string.toLowerCase().split(" ")
+   for( var i=0; i<words.length; i++) {
+      words[i]=words[i][0].toUpperCase() + words[i].slice(1) //slice is used here to give all the letters except first letter.
+      }
+   return words.join(" ")
+}
+console.log(upperCaseFirsstLetter())
+</script>

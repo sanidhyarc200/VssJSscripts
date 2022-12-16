@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /**
+     * write a loop for number till 100
+     * then simple if condition that if i%15 ===0; then fizzbuzz
+     * if i%3 === 0 fizz 
+     * if i%5 === 0 buzz;
+     **/
+
+     for (let i = 0; i <= 100; i++) {
+    //     if(i%15 === 0)  console.log('fizzbuzz');
+    //     else if(i%3 ===0) console.log('fizz');
+    //     else if(i%5 ===0) console.log('buzz');
+    
+    console.log(
+    (i++ % 3 ? '' : 'fizz') + (i % 5 ? '' : 'buzz') || i)
+     }
+
+    
+
+</script>

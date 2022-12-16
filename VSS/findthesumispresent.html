@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+  /**
+   * use for loop to itrate through array
+   * again a for loop for every elemnent in first has sum = 0
+   **/
+
+   /**
+    * one loop approch 
+    * empty object 
+    * for loop to itrate the array to check if avaialable or not then add element
+    *  use object.has on property
+    * check if the reverse is available if it is there it is our number
+    **/
+
+var arr = [1,2,3,4,-1,3];
+    const findPair = (arr) => {
+  const map = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    const current = arr[i];
+
+    if (map.hasOwnProperty(current)) {
+      continue;
+    }
+
+    map[current] = i; 
+    const findReverseKey = current > 0 ? `-${current}` : Math.abs(current) ;
+
+    if (map.hasOwnProperty(findReverseKey)) {
+      return {
+        [map[current]]: current,
+        [map[findReverseKey]]: findReverseKey,
+      };
+      
+    }
+    
+  }
+  
+};
+
+console.log(findPair(arr))
+</script>

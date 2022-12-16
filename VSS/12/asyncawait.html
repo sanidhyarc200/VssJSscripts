@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const getMenu = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply({ message: "Menu is given to the user" });
+      }, 3000);
+    });
+  };
+
+  const orderingFood = (food, tableNo) => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply({
+          food,
+          tableNo,
+          message: "Ordering food is done. Now preparing the food",
+        });
+      }, 3000);
+    });
+  };
+
+  const foodIsBeingPrepared = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply({
+          message: "Food preparation is in done. Preparing to serve now",
+        });
+      }, 3000);
+    });
+  };
+
+  const servingFoodTotheCustomer = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply({ message: "Food served successfully" });
+      }, 3000);
+    });
+  };
+
+  getMenu()
+    .then((data) => {
+      console.log("1 Data: ", data);
+      orderingFood({ name: "pav bhaji" }, 21)
+        .then((order) => {
+          console.log("2: Order: ", order);
+          foodIsBeingPrepared()
+            .then((prepareStatus) => {
+              console.log("3: prepareStatus: ", prepareStatus);
+              servingFoodTotheCustomer()
+                .then((food) => {
+                  console.log("4: food: ", food);
+                })
+                .catch((err) => {
+                  console.log("4: Error: ", err);
+                });
+            })
+            .catch((err) => {
+              console.log("3: Error: ", err);
+            });
+        })
+        .catch((err) => {
+          console.log("2: Error: ", err);
+        });
+    })
+    .catch((err) => {
+      console.log("1 Error: ", err);
+    });
+  
+  
+  
+  async function letsDoAParty() {
+    console.log("Party is started");
+    const menu = await getMenu().catch((err) => null);
+    console.log(menu);
+    if (!menu) {
+      console.log("Unable to get menu");
+      return;
+    }
+
+    const orderFood = await orderingFood({ name: "pav bhaji" }, 21).catch(
+      (err) => null
+    );
+    console.log(orderFood);
+    if (!orderFood) {
+      console.log("orderFood is failed");
+      return;
+    }
+
+    const foodPreparing = await foodIsBeingPrepared().catch((err) => {
+      return null;
+    });
+    console.log(foodPreparing);
+    if (!foodPreparing) {
+      console.log("foodPreparing is failed");
+      return;
+    }
+
+    const servingFood = await servingFoodTotheCustomer().catch((err) => {
+      return null;
+    });
+    console.log(servingFood);
+    if (!servingFood) {
+      console.log("servingFood is failed");
+      return;
+    }
+    console.log("Party is Completed");
+  }
+
+  letsDoAParty();
+</script>

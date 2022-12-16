@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const buyPavBhaviMaterial = () => {
+    console.log("Visiting market to search Pav Bhaji");
+    return new Promise((reply, reject) => {
+      reply("Pav bhai is found");
+    });
+  };
+  const buyPizzaMaterial = () => {
+    console.log("Visiting market to search Pizza");
+    return new Promise((reply, reject) => {
+      reject("Pizza material is not found");
+    });
+  };
+
+  const pizzaFound = () => {
+    console.log("Calling Akash that i have found Pizza");
+  };
+
+  const pavBhajiFound = () => {
+    console.log("Calling Akash that i have found Pav Bhaji");
+  };
+
+  const prepareColdCofee = () => {
+    console.log("Preparing cold coffee");
+    return true;
+  };
+
+  const cleaningTheRoom = () => {
+    console.log("Cleaning room is done");
+    prepareColdCofee();
+    return true;
+  };
+
+  buyPavBhaviMaterial()
+    .then((data) => {
+      console.log(data);
+      pavBhajiFound();
+    })
+    .catch((err) => console.log(err));
+
+  buyPizzaMaterial()
+    .then((data) => {
+      console.log(data);
+      pizzaFound();
+    })
+    .catch((err) => console.log(err));
+
+  cleaningTheRoom();
+</script>
