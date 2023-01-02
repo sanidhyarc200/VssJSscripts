@@ -1,0 +1,27 @@
+<html>
+  <head></head>
+  <body>
+    <article id="ancestor">
+      article element
+      <div id="parent">
+        div element
+        <p id="child">p element</p>
+      </div>
+    </article>
+  </body>
+</html>
+
+<script>
+  const cb = () => {};
+  // Script to click event handler to capture on each element
+  for (let elem of document.querySelectorAll("*")) {
+    elem.addEventListener(
+      "click",
+      (e) => {
+        e.stopPropagation();
+        console.log("Capturing:", elem.tagName);
+      },
+      true
+    );
+  }
+</script>

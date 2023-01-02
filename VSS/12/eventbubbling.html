@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        padding: 12px;
+        margin: 12px;
+      }
+
+      .a {
+        background-color: antiquewhite;
+      }
+
+      .b {
+        background-color: salmon;
+      }
+
+      .c {
+        background-color: rgb(240, 212, 150);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a" onclick="p(event)">
+      Parent
+      <div class="b" onclick="pc(event)">
+        Parent Child
+        <div class="c" onclick="pcc(event)">Parent Child Children</div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  /**
+   * Two ways to stop bubbling
+   * 1- Use Event stop propogation
+   * 2- Attach event listener with bubble: false
+   */
+
+  // 1
+  function pcc(ev) {
+    ev.stopPropagation();
+    console.log("PCC", ev.target);
+  }
+  function pc(ev) {
+    ev.stopPropagation();
+    console.log("PC", ev.target);
+  }
+  function p(ev) {
+    ev.stopPropagation();
+    console.log("P", ev.target);
+  }
+</script>
