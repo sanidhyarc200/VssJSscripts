@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var wordBreak = function(s, wordDict) {
+  var len = wordDict.length;
+  var dp = Array(len);
+  var map = {};
+  for (var i = 0; i < len; i++) {
+    map[wordDict[i]] = true;
+  }
+  return find(s, map, dp, 0);
+};
+
+var find = function (s, map, dp, index) {
+  if (dp[index] !== undefined) return dp[index];
+
+  var str = '';
+  var res = false;
+  var len = s.length;
+
+  if (index === len) return true;
+
+  for (var i = index; i < len; i++) {
+    str = s.substring(index, i + 1);
+    if (map[str] && find(s, map, dp, i + 1)) {
+      res = true;
+      break;
+    }
+  }
+
+  dp[index] = res;
+  return res;
+};
+</script>
