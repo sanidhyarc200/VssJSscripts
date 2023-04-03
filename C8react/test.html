@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+<script>
+const container = document.getElementById("like_button_container");
+const root = ReactDOM.createRoot(container);
+/* root.render(
+  React.createElement(
+    "a",
+    { className: "nav link", href: "https://www.google.com", target: "_blank" },
+    "Open Google"
+  )
+); */
+
+/* root.render(
+  React.createElement(
+    "input",
+    {
+      className: "input ",
+      type: "text",
+      placeholder: "Enter your password",
+      onChange: (e) => {
+        const { value } = e.target;
+        console.log({ value });
+      },
+    },
+    null
+  )
+); */
+
+const uName = "Satyam";
+
+root.render(
+  React.createElement(
+    "h1",
+    { className: "greeting" },
+    "Hello ",
+    React.createElement("i", null, uName),
+    ". Welcome!"
+  )
+);
+</script>
