@@ -61,19 +61,61 @@
 // });
 
 // console.log(emps);
-const arr = [1,5,5,4,6]
-const newarr = arr.filter((item) => {
-    return item%3 === 0 ? true : false ;
-})
-console.log(newarr);
+// const arr = [1,5,5,4,6]
+// const newarr = arr.filter((item) => {
+//     return item%3 === 0 ? true : false ;
+// })
+// console.log(newarr);
 
-const newarr1 = arr.map((item) =>{
-    return item*3;
-})
-console.log(newarr1);
-
-
-const newarr2  = {...arr}
-console.log(newarr2);
+// const newarr1 = arr.map((item) =>{
+//     return item*3;
+// })
+// console.log(newarr1);
 
 
+// const newarr2  = {...arr}
+// console.log(newarr2);
+
+
+
+// const emps =[
+//         {type : "Mark" , joined : 2003},
+//         {type : "anita" , joined : 2001},
+//         {type : "JOHN" , joined : 2010},
+//         {type : "Mary" , joined : 2010},
+//         {type : "BOB" , joined : 2009},
+//         {type : "ben" , joined : 2007},
+//         {type : "Mary" , joined : 2020},
+//     ];
+
+//     let emp = 0;
+//     let I = emps.length;
+//     let text = "";
+
+//     for(;emp< I;){
+//         text += emps[emp.type] + emps[emp.joined];
+//         emp++;
+//         console.log(text);
+//     }
+
+
+
+let emp1Ds = [465216,748125,787465,89265,656546,153220];
+function f1(total,value, index, array){
+    return total + value + index;
+
+    
+}
+function f2(total, value){
+    return total + value;
+
+}
+
+let e1 = emp1Ds.reduce(f1)
+console.log(e1);
+let e2 = emp1Ds.reduce(f2)
+console.log(e2);
+let e3 = emp1Ds.reduceRight(f1)
+console.log(e3);
+let e4 = emp1Ds.reduceRight(f2)
+console.log(e4);
